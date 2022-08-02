@@ -69,7 +69,7 @@ def setup():
 	filedata = f.read()
 	f.close()
 	
-	newdata = filedata.replace(nm_config.mod_port, 502)
+	newdata = filedata.replace(nm_config.mod_port, "502")
 	
 	f = open('nm_config.py', 'w')
 	f.write(newdata)
