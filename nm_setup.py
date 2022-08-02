@@ -15,7 +15,7 @@ def setup():
 	temp = input("Type in new SCADA IP: ")
 	
 	if (temp == ""):
-		temp = "no scada ip"
+		temp = "no scada ip found"
 	
 	
 	f = open('nm_config.py', 'r')
@@ -48,7 +48,7 @@ def setup():
 	temp = input("Type in Modbus Client IP: ")
 	
 	if (temp == ""):
-		temp = "no modbus client ip"
+		temp = "no modbus client ip found"
 	
 	f = open('nm_config.py', 'r')
 	filedata = f.read()
@@ -68,7 +68,7 @@ def setup():
 	macaddr = subprocess.getoutput("arp -n "+ temp +" | awk '/ether/ {print$3}'")
 	
 	if (macaddr == ""):
-		macaddr = "no scada mac"
+		macaddr = "no modbus client mac"
 	
 	newdata = filedata.replace(nm_config.modcli_mac, macaddr)
 	
