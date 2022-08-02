@@ -24,12 +24,11 @@ def setup():
 	f.write(newdata)
 	f.close()
 
-	from nm_config import *
 	f = open('nm_config.py', 'r')
 	filedata = f.read()
 	f.close()
 	
-	macaddr = subprocess.getoutput("arp -n "+ nm_config.scada_ip +" | awk '/ether/ {print$3}'")
+	macaddr = subprocess.getoutput("arp -n "+ temp +" | awk '/ether/ {print$3}'")
 	
 	newdata = filedata.replace(nm_config.scada_mac, macaddr)
 	
@@ -56,8 +55,7 @@ def setup():
 	filedata = f.read()
 	f.close()
 	
-	from nm_config import *
-	macaddr = subprocess.getoutput("arp -n "+ nm_config.modcli_ip +" | awk '/ether/ {print$3}'")
+	macaddr = subprocess.getoutput("arp -n "+ temp +" | awk '/ether/ {print$3}'")
 	
 	newdata = filedata.replace(nm_config.modcli_mac, macaddr)
 	
