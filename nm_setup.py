@@ -24,7 +24,7 @@ def setup():
 	f.write(newdata)
 	f.close()
 
-
+	from nm_config import *
 	f = open('nm_config.py', 'r')
 	filedata = f.read()
 	f.close()
@@ -56,6 +56,7 @@ def setup():
 	filedata = f.read()
 	f.close()
 	
+	from nm_config import *
 	macaddr = subprocess.getoutput("arp -n "+ nm_config.modcli_ip +" | awk '/ether/ {print$3}'")
 	
 	newdata = filedata.replace(nm_config.modcli_mac, macaddr)
