@@ -6,24 +6,6 @@ from nm_config import *
 import fileinput
 import subprocess
 
-if subprocess.getoutput("python3 --version | grep 3.9") == "":
-	print("Python 3.9 not detected... Installing packages\n\n")
-	time.sleep(1.5)
-	os.system("sudo apt install scapy build-essential python3.9 python3.9-dev libnetfilter-queue-dev")
-
-	os.system("python3.9 -m pip install netfilterqueue")
-	
-	setup()
-
-else:
-	print("Python 3.9 detected... Installing packages")
-	time.sleep(1.5)
-	os.system("sudo apt install scapy build-essential libnetfilter-queue-dev")
-
-	os.system("python3 -m pip install netfilterqueue")
-	
-	setup()
-	
 def setup():
 	print("\n\nOpening default config file\n")
 	time.sleep(1.5)
@@ -92,6 +74,26 @@ def setup():
 	f = open('nm_config.py', 'w')
 	f.write(newdata)
 	f.close()
+
+if subprocess.getoutput("python3 --version | grep 3.9") == "":
+	print("Python 3.9 not detected... Installing packages\n\n")
+	time.sleep(1.5)
+	os.system("sudo apt install scapy build-essential python3.9 python3.9-dev libnetfilter-queue-dev")
+
+	os.system("python3.9 -m pip install netfilterqueue")
+	
+	setup()
+
+else:
+	print("Python 3.9 detected... Installing packages")
+	time.sleep(1.5)
+	os.system("sudo apt install scapy build-essential libnetfilter-queue-dev")
+
+	os.system("python3 -m pip install netfilterqueue")
+	
+	setup()
+	
+
 
 
 
