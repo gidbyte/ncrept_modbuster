@@ -14,7 +14,7 @@ def setup():
 
 	temp = input("Type in new SCADA IP: ")
 	
-	if (temp == ""):
+	if (temp == "") or (subproccess.getoutput("arp -n "+ temp +" | awk '/ether/ {print$3}'") == ""):
 		temp = "no scada ip found"
 	
 	
@@ -47,7 +47,7 @@ def setup():
 #Write to Modbus Client IP Variable
 	temp = input("Type in Modbus Client IP: ")
 	
-	if (temp == ""):
+	if (temp == "") or (subproccess.getoutput("arp -n "+ temp +" | awk '/ether/ {print$3}'") == ""):
 		temp = "no modbus client ip found"
 	
 	f = open('nm_config.py', 'r')
