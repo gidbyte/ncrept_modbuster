@@ -1,0 +1,5 @@
+scada_ip = ""
+scada_mac = ""
+modcli_ip = ""
+modcli_mac = ""
+mod_port = "502"
