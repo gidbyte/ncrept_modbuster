@@ -3,9 +3,9 @@ ModbusTCP Python3.9 Script for MITM, DoS, and Replay Attacks
 
 For use with Kali Linux to demonstrate ModbusTCP data stream manipulation using Python
 
-Requirements
+Package Requirements
 ---------------------
-- python3.9, scapy, netfilterqueue (use pip3), iptables, ettercap, msfconsole
+- python3.9, scapy, netfilterqueue(will be installed by nm_setup.py if not already installed), iptables, ettercap, msfconsole
 
 Steps before Using
 ---------------------
